@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
 
     }
+    
 
     public void increment(View view) {
 
