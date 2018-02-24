@@ -1,5 +1,5 @@
 /**
- * IMPORTANT: Make sure you are using the correct package name. 
+ * IMPORTANT: Make sure you are using the correct package name.
  * This example uses the package name:
  * package com.example.android.justjava
  * If you get an error when copying this code into Android studio, update it to match teh package name found
@@ -7,7 +7,6 @@
  **/
 
 package com.example.android.justjava;
-
 
 
 import android.os.Bundle;
@@ -21,19 +20,28 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int quantity= 0;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayPrice(quantity *  5);
+     String priceMessage="Total: \u20B9"+quantity * 5+"\nThank you!";
+
+        displayMessage(priceMessage);
+
     }
 
     /**
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
+
     /**
      * This method displays the given price on the screen.
      */
@@ -56,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
 
     }
-    
+
 
     public void increment(View view) {
 
